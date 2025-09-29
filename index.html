@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能五子棋</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>技能五子棋</h1>
+        
+        <!-- 游戏模式选择界面 -->
+        <div id="game-mode-selection" class="mode-container">
+            <h2>选择游戏模式</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" id="multiplayer-btn">双人模式</button>
+                <button class="mode-btn" id="singleplayer-btn">单机模式</button>
+            </div>
+        </div>
+
+        <!-- AI难度选择界面 -->
+        <div id="ai-difficulty-selection" class="mode-container" style="display: none;">
+            <h2>选择AI难度</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-level="easy">初级</button>
+                <button class="difficulty-btn" data-level="medium">中级</button>
+                <button class="difficulty-btn" data-level="hard">高级</button>
+            </div>
+            <button class="back-btn" id="back-to-mode">返回</button>
+        </div>
+        
+        <!-- 石头剪子布界面 -->
+        <div id="rock-paper-scissors" class="rps-container" style="display: none;">
+            <h2>石头剪子布决定先手</h2>
+            <div class="rps-choices">
+                <button class="rps-btn" data-choice="rock">✊ 石头</button>
+                <button class="rps-btn" data-choice="paper">✋ 布</button>
+                <button class="rps-btn" data-choice="scissors">✌ 剪刀</button>
+            </div>
+            <div id="rps-result"></div>
+        </div>
+
+        <!-- 游戏主界面 -->
+        <div id="game-area" class="game-area" style="display: none;">
+            <!-- 游戏信息栏 -->
+            <div class="game-info">
+                <div class="player-info">
+                    <div class="current-player">当前玩家: <span id="current-player">黑方</span></div>
+                    <div class="round-counter">回合数: <span id="round-counter">1</span></div>
+                </div>
+                <div class="game-status">
+                    <div id="game-status-text">点击棋盘落子</div>
+                </div>
+                <button id="undo-btn" class="control-btn">悔棋</button>
+            </div>
+
+            <!-- 棋盘 -->
+            <div class="board-container">
+                <canvas id="game-board" width="600" height="600"></canvas>
+            </div>
+
+            <!-- 技能区域 -->
+            <div class="skills-container">
+                <h3>技能面板</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon" id="skill-feisha">🌪</div>
+                        <div class="skill-name">飞沙走石</div>
+                        <div class="skill-desc">移除对方1颗棋子</div>
+                        <div class="skill-cooldown">冷却: <span id="feisha-cooldown">0</span>回合</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon" id="skill-libashan">⛰</div>
+                        <div class="skill-name">力拔山兮</div>
+                        <div class="skill-desc">清除棋盘中央区域棋子</div>
+                        <div class="skill-cooldown">冷却: <span id="libashan-cooldown">0</span>回合</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon" id="skill-dongshan">🔄</div>
+                        <div class="skill-name">东山再起</div>
+                        <div class="skill-desc">回复被清除的棋子</div>
+                        <div class="skill-cooldown">冷却: <span id="dongshan-cooldown">0</span>回合</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 游戏结果 -->
+            <div id="game-result" class="game-result" style="display: none;">
+                <div class="result-content">
+                    <h2 id="winner-text"></h2>
+                    <button id="restart-btn" class="control-btn">重新开始</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
