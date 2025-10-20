@@ -42,7 +42,7 @@
 - 🌐 所有现代浏览器
 
 ## 🚀 在线游玩
-[点击这里开始游戏](https://your-username.github.io/jinengwuziji/)
+[点击这里开始游戏](https://yunzexinghai.github.io/jinengwuziji/)
 
 ## 🛠️ 技术栈
 - HTML5 Canvas
